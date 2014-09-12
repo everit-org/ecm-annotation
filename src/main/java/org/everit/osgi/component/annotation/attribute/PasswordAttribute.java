@@ -28,12 +28,6 @@ import java.lang.annotation.Target;
 public @interface PasswordAttribute {
 
     /**
-     * The default value(s) of the attribute. In case the annotation is appended to a field or method, the default
-     * values come from the default value of the field.
-     */
-    float[] defaultValue() default {};
-
-    /**
      * A descriptive text to provide the client in a form to configure this property. This name may be localized by
      * prepending a % sign to the name. Default value: %&lt;name&gt;.description
      */
@@ -52,14 +46,14 @@ public @interface PasswordAttribute {
     String label() default "";
 
     /**
+     * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
+     */
+    boolean metatype() default false;
+
+    /**
      * The name of the attribute.
      */
     String name() default "";
-
-    /**
-     * Boolean flag defining whether the property should be listed in the MetatypeProvider or not.
-     */
-    boolean propertyPrivate() default false;
 
     /**
      * The setter method that should be used to inject the value of this property. If the annotation is defined on a

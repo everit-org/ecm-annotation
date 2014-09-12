@@ -60,6 +60,11 @@ public @interface IntegerAttribute {
     String label() default "";
 
     /**
+     * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
+     */
+    boolean metatype() default false;
+
+    /**
      * The name of the attribute.
      */
     String name() default "";
@@ -72,11 +77,6 @@ public @interface IntegerAttribute {
      * in the user interface. This label may be prepended with a % sign to localize the string.
      */
     IntegerAttributeOption[] options() default {};
-
-    /**
-     * Boolean flag defining whether the property should be listed in the MetatypeProvider or not.
-     */
-    boolean propertyPrivate() default false;
 
     /**
      * The setter method that should be used to inject the value of this property. If the annotation is defined on a

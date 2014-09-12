@@ -14,13 +14,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Everit - Component Annotations.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.everit.osgi.component.annotation.attribute;
+package org.everit.osgi.component.annotation;
 
-public enum ReferenceType {
+public enum ReferenceAttributeType {
 
     CLAUSE,
-
-    DEFAULT,
 
     FILTER
 

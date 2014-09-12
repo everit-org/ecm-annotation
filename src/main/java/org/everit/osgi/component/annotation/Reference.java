@@ -22,14 +22,21 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.everit.osgi.component.annotation.attribute.ReferenceType;
-
 @Target({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Reference {
 
-    ReferenceType attributeType() default ReferenceType.DEFAULT;
+    /**
+     * The name of the reference. In case the type of the reference attribute type is CLAUSE, a
+     * {@code referenceName.clause} , otherwise a {@code referenceName.target} attribute will be listed.
+     */
+    String attributeName() default "";
+
+    /**
+     * The type of the attribute.
+     */
+    ReferenceAttributeType attributeType() default ReferenceAttributeType.FILTER;
 
     /**
      * The bind method that should be used to bind the reference. If the annotation is defined on a method, that method
@@ -71,14 +78,14 @@ public @interface Reference {
     String label() default "";
 
     /**
+     * Boolean flag defining whether the reference should be listed in the MetatypeProvider or not.
+     */
+    boolean metatype() default false;
+
+    /**
      * The name of the reference.
      */
     String name() default "";
-
-    /**
-     * Boolean flag defining whether the property should be listed in the MetatypeProvider or not.
-     */
-    boolean propertyPrivate() default false;
 
     /**
      * The bind method that should be used to bind the reference. In case the unbind method is not specified but there

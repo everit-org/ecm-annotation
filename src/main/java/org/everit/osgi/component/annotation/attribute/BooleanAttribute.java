@@ -60,14 +60,14 @@ public @interface BooleanAttribute {
     String label() default "";
 
     /**
+     * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
+     */
+    boolean metatype() default true;
+
+    /**
      * The name of the attribute.
      */
     String name() default "";
-
-    /**
-     * Boolean flag defining whether the property should be listed in the MetatypeProvider or not.
-     */
-    boolean propertyPrivate() default false;
 
     /**
      * The setter method that should be used to inject the value of this property. If the annotation is defined on a

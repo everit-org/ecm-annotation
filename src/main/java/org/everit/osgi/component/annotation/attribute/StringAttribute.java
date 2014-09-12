@@ -60,6 +60,11 @@ public @interface StringAttribute {
     String label() default "";
 
     /**
+     * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
+     */
+    boolean metatype() default false;
+
+    /**
      * Whether a multi-line or a one-line field should be shown in a form to configure this property.
      */
     boolean multiline() default false;
@@ -77,11 +82,6 @@ public @interface StringAttribute {
      * in the user interface. This label may be prepended with a % sign to localize the string.
      */
     StringAttributeOption[] options() default {};
-
-    /**
-     * Boolean flag defining whether the property should be listed in the MetatypeProvider or not.
-     */
-    boolean propertyPrivate() default false;
 
     /**
      * The setter method that should be used to inject the value of this property. If the annotation is defined on a

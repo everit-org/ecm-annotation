@@ -35,7 +35,7 @@ public @interface Component {
     /**
      * The configuration pid. The default value for this is the name of the component.
      */
-    String[] configurationPid() default "";
+    String configurationPid() default "";
 
     /**
      * If true configuration is required to activate the component otherwise if there is no configuration, the component
