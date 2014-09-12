@@ -22,26 +22,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.everit.osgi.component.annotation.attribute.ReferenceAttribute;
+
 @Target({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Reference {
 
-    /**
-     * The name of the reference. If not provided the default value is defined based on the value of
-     * {@link #attributeType()}:
-     *
-     * <ul>
-     * <li>{@link ReferenceAttributeType#FILTER}: The default value will be "{@link #name()}" + ".target".</li>
-     * <li>{@link ReferenceAttributeType#CLAUSE}: The default value will be "{@link #name()}" + ".clause".</li>
-     * </ul>
-     */
-    String attributeName() default "";
-
-    /**
-     * The type of the attribute.
-     */
-    ReferenceAttributeType attributeType() default ReferenceAttributeType.FILTER;
+    ReferenceAttribute attribute();
 
     /**
      * The bind method that should be used to bind the reference. If the annotation is defined on a method, that method
@@ -59,33 +47,11 @@ public @interface Reference {
     Cardinality cardinality();
 
     /**
-     * The default clause(s) or OSGi filter(s) of the reference.
-     */
-    String[] defaultValue() default {};
-
-    /**
-     * A descriptive text to provide the client in a form to configure this property. This name may be localized by
-     * prepending a % sign to the name. Default value: %&lt;name&gt;.description
-     */
-    String description() default "";
-
-    /**
      * If true, the reference is re-binded without restarting the component in case of a service switch. The component
      * also does not stop if the configuration is updated behind in the way that the reference can remain satisfied
      * after the actualization of the clause(s) or filter(s).
      */
     boolean dynamic() default false;
-
-    /**
-     * The label to display in a form to configure this property. This name may be localized by prepending a % sign to
-     * the name. Default value: %&lt;name&gt;.name
-     */
-    String label() default "";
-
-    /**
-     * Boolean flag defining whether the reference should be listed in the MetatypeProvider or not.
-     */
-    boolean metatype() default false;
 
     /**
      * The name of the reference.

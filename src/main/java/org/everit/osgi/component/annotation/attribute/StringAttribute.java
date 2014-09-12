@@ -42,19 +42,19 @@ public @interface StringAttribute {
     String[] defaultValue() default {};
 
     /**
-     * A descriptive text to provide the client in a form to configure this property. This name may be localized by
+     * A descriptive text to provide the client in a form to configure this attribute. This name may be localized by
      * prepending a % sign to the name. Default value: %&lt;name&gt;.description
      */
     String description() default "";
 
     /**
-     * If true, the property is re-set without restarting the component. Otherwise the component is restarted it the
-     * configuration is updated in the way that the value of this attribute changes in the component instance.
+     * If true, the attribute is updated without restarting the component. If the attribute has a setter, it is called
+     * during the update.
      */
     boolean dynamic() default false;
 
     /**
-     * The label to display in a form to configure this property. This name may be localized by prepending a % sign to
+     * The label to display in a form to configure this attribute. This name may be localized by prepending a % sign to
      * the name. Default value: %&lt;name&gt;.name
      */
     String label() default "";
@@ -62,7 +62,7 @@ public @interface StringAttribute {
     /**
      * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
      */
-    boolean metatype() default false;
+    boolean metatype() default true;
 
     /**
      * Whether a multi-line or a one-line field should be shown in a form to configure this property.
