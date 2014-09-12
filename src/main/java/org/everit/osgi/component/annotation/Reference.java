@@ -28,8 +28,13 @@ import java.lang.annotation.Target;
 public @interface Reference {
 
     /**
-     * The name of the reference. In case the type of the reference attribute type is CLAUSE, a
-     * {@code referenceName.clause} , otherwise a {@code referenceName.target} attribute will be listed.
+     * The name of the reference. If not provided the default value is defined based on the value of
+     * {@link #attributeType()}:
+     *
+     * <ul>
+     * <li>{@link ReferenceAttributeType#FILTER}: The default value will be "{@link #name()}" + ".target".</li>
+     * <li>{@link ReferenceAttributeType#CLAUSE}: The default value will be "{@link #name()}" + ".clause".</li>
+     * </ul>
      */
     String attributeName() default "";
 
