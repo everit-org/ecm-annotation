@@ -56,6 +56,12 @@ public @interface PasswordAttribute {
     String name() default "";
 
     /**
+     * In case the value of the attribute is optional, it does not have to be defined on a form or in Configuration
+     * Admin.
+     */
+    boolean optional() default true;
+
+    /**
      * The setter method that should be used to inject the value of this property. If the annotation is defined on a
      * method, that method and it is not specified otherwise in the annotation, the method will be used as a setter. If
      * the annotation is attached to a field and the setter is not defined in the annotation, the field will be injected

@@ -15,7 +15,8 @@ public @interface ReferenceAttribute {
 
     /**
      * The default value(s) of the attribute. In case the annotation is appended to a field or method, the default
-     * values come from the default value of the field.
+     * values come from the default value of the field. In case the reference is not optional, the component does not
+     * need configuration and the default value is not defined, a one element array will be used with an empty String.
      */
     String[] defaultValue() default {};
 

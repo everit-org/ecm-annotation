@@ -22,18 +22,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.everit.osgi.component.annotation.Cardinality;
-
 @Target({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface FloatAttribute {
-
-    /**
-     * Cardinality of the attribute. In case the annotation is appended to a field or method, only those cardinalities
-     * are allowed that meet the type of the setter/field.
-     */
-    Cardinality cardinality();
 
     /**
      * The default value(s) of the attribute. In case the annotation is appended to a field or method, the default
@@ -65,9 +57,20 @@ public @interface FloatAttribute {
     boolean metatype() default false;
 
     /**
+     * Attributes with multiple cardinality will get their value as an array.
+     */
+    boolean multiple() default false;
+
+    /**
      * The name of the attribute.
      */
     String name() default "";
+
+    /**
+     * In case the value of the attribute is optional, it does not have to be defined on a form or in Configuration
+     * Admin. In case of a non-optional multiple cardinality, the array of values must contain at least one element.
+     */
+    boolean optional() default true;
 
     /**
      * Some properties may only be set to a set of possible values. To support user interfaces which provide a selection
