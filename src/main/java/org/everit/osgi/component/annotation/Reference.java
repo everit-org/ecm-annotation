@@ -40,6 +40,8 @@ public @interface Reference {
      */
     String bind() default "";
 
+    ReferenceCardinality cardinality() default ReferenceCardinality.MANDATORY;
+
     /**
      * If true, the reference is re-binded without restarting the component in case of a service switch. The component
      * also does not stop if the configuration is updated behind in the way that the reference can remain satisfied
@@ -48,21 +50,9 @@ public @interface Reference {
     boolean dynamic() default false;
 
     /**
-     * Multiple OSGi service instances can be bound to the component.
-     */
-    boolean multiple() default false;
-
-    /**
      * The name of the reference.
      */
     String name() default "";
-
-    /**
-     * In case the reference is optional, it does not have to be defined on a form or in Configuration Admin. In case of
-     * a non-optional multiple cardinality, then the component will be satisfied only if there is at least one reference
-     * defined.
-     */
-    boolean optional() default true;
 
     /**
      * The bind method that should be used to bind the reference. In case the unbind method is not specified but there
