@@ -35,7 +35,7 @@ public @interface Component {
     /**
      * The configuration pid. The default value for this is the name of the component.
      */
-    String configurationPid();
+    String configurationPid() default "";
 
     /**
      * If true configuration is required to activate the component otherwise if there is no configuration, the component
@@ -47,23 +47,23 @@ public @interface Component {
      * This is generally used as a description for the object described by the meta type. This name may be localized by
      * prepending a % sign to the name. Default value: %&lt;name&gt;.description
      */
-    String description();
+    String description() default "";
 
     /**
      * Resource path of the icon that is assigned to the component. The classloader of the component is used to find the
      * resource.
      */
-    String icon();
+    String icon() default "";
 
     /**
      * This is generally used as a title for the object described by the meta type. This name may be localized by
      * prepending a % sign to the name. Default value: %&lt;name&gt;.name
      */
-    String label();
+    String label() default "";
 
     /**
      * Defines the Component name also used as the PID for the Configuration Admin Service. Default value: Fully
      * qualified name of the Java class.
      */
-    String name();
+    String name() default "";
 }

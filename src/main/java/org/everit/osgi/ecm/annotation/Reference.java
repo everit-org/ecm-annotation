@@ -55,6 +55,13 @@ public @interface Reference {
     String name() default "";
 
     /**
+     * The name of the service interface. This name is used by the Service Component Runtime to access the service on
+     * behalf of the component. If the annotation is declared on class level, this parameter is required. If the
+     * annotation is declared for a field, the default value for the interface parameter is the type of the field.
+     */
+    Class<?> referenceInterface() default AutoDetect.class;
+
+    /**
      * The bind method that should be used to bind the reference. In case the unbind method is not specified but there
      * is a method starting with "un" and ending with the name of the bind method, that method will be used to unbind
      * the reference.
