@@ -1,4 +1,4 @@
-everit-component-annotation
-===========================
+ecm-annotation
+==============
 
-Annotation definitions for the Everit Component Registry
+Annotation definitions for the Everit Component Model
