@@ -24,12 +24,12 @@ import java.lang.annotation.Target;
 
 import org.everit.osgi.ecm.annotation.attribute.ReferenceAttribute;
 
-@Target({ ElementType.TYPE, ElementType.FIELD, ElementType.METHOD })
+@Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Reference {
 
-    ReferenceAttribute attribute();
+    ReferenceAttribute attribute() default @ReferenceAttribute();
 
     /**
      * The bind method that should be used to bind the reference. If the annotation is defined on a method, that method

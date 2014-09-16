@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * Allows to define multiple {@link LongAttribute} annotations for one type.
  */
 @Target(ElementType.TYPE)
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface LongAttributes {
 
