@@ -16,7 +16,7 @@
  */
 package org.everit.osgi.ecm.annotation.attribute;
 
-public enum ReferenceAttributeType {
+public enum ReferenceConfigurationType {
 
     CLAUSE,
 

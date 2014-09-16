@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ReferenceAttribute {
 
-    ReferenceAttributeType attributeType() default ReferenceAttributeType.FILTER;
+    ReferenceConfigurationType configurationType() default ReferenceConfigurationType.FILTER;
 
     /**
      * The default value(s) of the attribute. In case the annotation is appended to a field or method, the default
@@ -55,11 +55,11 @@ public @interface ReferenceAttribute {
 
     /**
      * The name of the reference. If not provided the default value is defined based on the value of
-     * {@link #attributeType()}:
+     * {@link #configurationType()}:
      *
      * <ul>
-     * <li>{@link ReferenceAttributeType#FILTER}: The default value will be "{@link #name()}" + ".target".</li>
-     * <li>{@link ReferenceAttributeType#CLAUSE}: The default value will be "{@link #name()}" + ".clause".</li>
+     * <li>{@link ReferenceConfigurationType#FILTER}: The default value will be "{@link #name()}" + ".target".</li>
+     * <li>{@link ReferenceConfigurationType#CLAUSE}: The default value will be "{@link #name()}" + ".clause".</li>
      * </ul>
      */
     String name() default "";
