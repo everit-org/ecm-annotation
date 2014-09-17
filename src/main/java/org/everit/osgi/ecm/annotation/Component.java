@@ -61,6 +61,8 @@ public @interface Component {
      */
     String label() default "";
 
+    String localization() default "";
+
     /**
      * Defines the Component name also used as the PID for the Configuration Admin Service. Default value: Fully
      * qualified name of the Java class.
