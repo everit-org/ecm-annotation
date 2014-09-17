@@ -70,7 +70,7 @@ public @interface StringAttribute {
     /**
      * Whether a multi-line or a one-line field should be shown in a form to configure this property.
      */
-    boolean multiline() default false;
+    boolean multiLine() default false;
 
     /**
      * The name of the attribute.
