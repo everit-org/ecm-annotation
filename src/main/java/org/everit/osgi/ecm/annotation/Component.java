@@ -50,10 +50,9 @@ public @interface Component {
     String description() default "";
 
     /**
-     * Resource path of the icon that is assigned to the component. The classloader of the component is used to find the
-     * resource.
+     * One or more icon that should be shown for the component on a management screen.
      */
-    String icon() default "";
+    Icon[] icons() default {};
 
     /**
      * This is generally used as a title for the object described by the meta type. This name may be localized by
@@ -61,7 +60,15 @@ public @interface Component {
      */
     String label() default "";
 
-    String localization() default "";
+    /**
+     * The base name of the place of the localized texts.
+     */
+    String localizationBase() default "";
+
+    /**
+     * If true, MetatypeProvider OSGi service will be registered for the component.
+     */
+    boolean metatype() default true;
 
     /**
      * Defines the Component name also used as the PID for the Configuration Admin Service. Default value: Fully
