@@ -28,6 +28,11 @@ import java.lang.annotation.Target;
 public @interface Component {
 
     /**
+     * Defines the Component id. Default value: Fully qualified name of the Java class.
+     */
+    String componentId() default "";
+
+    /**
      * Set the metatype factory pid property.
      */
     boolean configurationFactory() default false;
@@ -69,10 +74,4 @@ public @interface Component {
      * If true, MetatypeProvider OSGi service will be registered for the component.
      */
     boolean metatype() default true;
-
-    /**
-     * Defines the Component name also used as the PID for the Configuration Admin Service. Default value: Fully
-     * qualified name of the Java class.
-     */
-    String name() default "";
 }
