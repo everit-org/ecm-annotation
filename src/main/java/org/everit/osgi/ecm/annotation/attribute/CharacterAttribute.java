@@ -35,17 +35,6 @@ public @interface CharacterAttribute {
     String attributeId() default "";
 
     /**
-     * Defines the cardinality of the property and its collection type. If the cardinality is negative, the property is
-     * expected to be stored in a {@link java.util.Vector} (primitive types such as boolean are boxed in the Wrapper
-     * class), if the cardinality is positive, the property is stored in an array (primitive types are unboxed, that is
-     * Boolean type values are stored in boolean[]). The actual value defines the maximum number of elements in the
-     * vector or array. If the cardinality is zero, the property is a scalar value. If the defined value of the property
-     * is set in the value attribute, the cardinality defaults to 0 (zero for scalar value). If the property is defined
-     * in one or more properties starting with values, the cardinality defaults to an unbounded array.
-     */
-    int cardinality() default 0;
-
-    /**
      * The default value(s) of the attribute. In case the annotation is appended to a field or method, the default
      * values come from the default value of the field.
      */
@@ -73,6 +62,16 @@ public @interface CharacterAttribute {
      * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
      */
     boolean metatype() default false;
+
+    /**
+     * In case it is allowed to define multiple values for the attribute, the values should be provided in an array.
+     */
+    boolean multiple() default false;
+
+    /**
+     * Whether the attribute is optional or not.
+     */
+    boolean optional() default false;
 
     /**
      * Some properties may only be set to a set of possible values. To support user interfaces which provide a selection

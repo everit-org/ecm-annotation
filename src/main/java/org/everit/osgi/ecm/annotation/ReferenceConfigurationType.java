@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Everit - Component Annotations.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.everit.osgi.ecm.annotation.attribute;
+package org.everit.osgi.ecm.annotation;
 
 public enum ReferenceConfigurationType {
 

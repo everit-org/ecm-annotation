@@ -22,14 +22,21 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.everit.osgi.ecm.annotation.attribute.ReferenceAttribute;
-
 @Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Reference {
 
-    ReferenceAttribute attribute() default @ReferenceAttribute();
+    /**
+     * The id of the attribute of the reference. If not provided the default value is defined based on the value of
+     * {@link #configurationType()}:
+     *
+     * <ul>
+     * <li>{@link ReferenceConfigurationType#FILTER}: The default value will be "{@link #referenceId()}" + ".target".</li>
+     * <li>{@link ReferenceConfigurationType#CLAUSE}: The default value will be "{@link #referenceId()}" + ".clause".</li>
+     * </ul>
+     */
+    String attributeId() default "";
 
     /**
      * The bind method that should be used to bind the reference. If the annotation is defined on a method, that method
@@ -40,7 +47,20 @@ public @interface Reference {
      */
     String bind() default "";
 
-    ReferenceCardinality cardinality() default ReferenceCardinality.MANDATORY;
+    ReferenceConfigurationType configurationType() default ReferenceConfigurationType.FILTER;
+
+    /**
+     * The default value(s) of the attribute. In case the annotation is appended to a field or method, the default
+     * values come from the default value of the field. In case the reference is not optional, the component does not
+     * need configuration and the default value is not defined, a one element array will be used with an empty String.
+     */
+    String[] defaultValue() default {};
+
+    /**
+     * A descriptive text to provide the client in a form to configure this property. This name may be localized by
+     * prepending a % sign to the name. Default value: %&lt;name&gt;.description
+     */
+    String description() default "";
 
     /**
      * If true, the reference is re-binded without restarting the component in case of a service switch. The component
@@ -50,9 +70,30 @@ public @interface Reference {
     boolean dynamic() default false;
 
     /**
+     * The label to display in a form to configure this attribute. This name may be localized by prepending a % sign to
+     * the name. Default value: %&lt;name&gt;.name
+     */
+    String label() default "";
+
+    /**
+     * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
+     */
+    boolean metatype() default true;
+
+    /**
+     * Whether allowing the configuration of multiple references or not.
+     */
+    boolean multiple() default false;
+
+    /**
      * The name of the reference.
      */
     String name() default "";
+
+    /**
+     * Whether at least one reference should be configured or not.
+     */
+    boolean optional() default false;
 
     /**
      * The name of the service interface. This name is used by the Service Component Runtime to access the service on
