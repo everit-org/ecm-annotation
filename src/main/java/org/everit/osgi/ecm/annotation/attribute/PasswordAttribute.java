@@ -64,7 +64,7 @@ public @interface PasswordAttribute {
     /**
      * The name of the attribute.
      */
-    String name() default "";
+    String attributeId() default "";
 
     /**
      * The setter method that should be used to inject the value of this property. If the annotation is defined on a

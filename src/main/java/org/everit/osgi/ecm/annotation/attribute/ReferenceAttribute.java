@@ -26,6 +26,17 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ReferenceAttribute {
 
+    /**
+     * The id of the attribute of the reference. If not provided the default value is defined based on the value of
+     * {@link #configurationType()}:
+     *
+     * <ul>
+     * <li>{@link ReferenceConfigurationType#FILTER}: The default value will be "{@link #referenceId()}" + ".target".</li>
+     * <li>{@link ReferenceConfigurationType#CLAUSE}: The default value will be "{@link #referenceId()}" + ".clause".</li>
+     * </ul>
+     */
+    String attributeId() default "";
+
     ReferenceConfigurationType configurationType() default ReferenceConfigurationType.FILTER;
 
     /**
@@ -51,15 +62,4 @@ public @interface ReferenceAttribute {
      * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
      */
     boolean metatype() default true;
-
-    /**
-     * The name of the reference. If not provided the default value is defined based on the value of
-     * {@link #configurationType()}:
-     *
-     * <ul>
-     * <li>{@link ReferenceConfigurationType#FILTER}: The default value will be "{@link #name()}" + ".target".</li>
-     * <li>{@link ReferenceConfigurationType#CLAUSE}: The default value will be "{@link #name()}" + ".clause".</li>
-     * </ul>
-     */
-    String name() default "";
 }

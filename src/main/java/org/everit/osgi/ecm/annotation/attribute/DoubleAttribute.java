@@ -28,6 +28,13 @@ import java.lang.annotation.Target;
 public @interface DoubleAttribute {
 
     /**
+     * The id of the attribute. If the annotation is defined on a field, the default id of the attribute will be the
+     * name of the field. If the annotation is defined on a method and the name of the method starts with "set", the
+     * default value will be the name of the method after the "set" word starting with a lowercase letter.
+     */
+    String attributeId() default "";
+
+    /**
      * Defines the cardinality of the property and its collection type. If the cardinality is negative, the property is
      * expected to be stored in a {@link java.util.Vector} (primitive types such as boolean are boxed in the Wrapper
      * class), if the cardinality is positive, the property is stored in an array (primitive types are unboxed, that is
@@ -66,11 +73,6 @@ public @interface DoubleAttribute {
      * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
      */
     boolean metatype() default false;
-
-    /**
-     * The name of the attribute.
-     */
-    String name() default "";
 
     /**
      * Some properties may only be set to a set of possible values. To support user interfaces which provide a selection
