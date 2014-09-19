@@ -86,14 +86,15 @@ public @interface Reference {
     boolean multiple() default false;
 
     /**
-     * The name of the reference.
-     */
-    String name() default "";
-
-    /**
      * Whether at least one reference should be configured or not.
      */
     boolean optional() default false;
+
+    /**
+     * The id of the reference. If not specified and the annotation is defined on a field, the id of the reference will
+     * be the name of the field.
+     */
+    String referenceId() default "";
 
     /**
      * The name of the service interface. This name is used by the Service Component Runtime to access the service on
