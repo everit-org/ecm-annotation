@@ -46,7 +46,7 @@ public @interface Component {
      * If true configuration is required to activate the component otherwise if there is no configuration, the component
      * will be activated anyway.
      */
-    boolean configurationRequired() default false;
+    ConfigurationPolicy configurationPolicy() default ConfigurationPolicy.OPTIONAL;
 
     /**
      * This is generally used as a description for the object described by the meta type. This name may be localized by
