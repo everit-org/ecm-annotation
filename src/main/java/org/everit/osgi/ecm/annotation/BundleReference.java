@@ -1,19 +1,3 @@
-/**
- * This file is part of Everit - Component Annotations.
- *
- * Everit - Component Annotations is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Everit - Component Annotations is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with Everit - Component Annotations.  If not, see <http://www.gnu.org/licenses/>.
- */
 package org.everit.osgi.ecm.annotation;
 
 import java.lang.annotation.Documented;
@@ -25,7 +9,7 @@ import java.lang.annotation.Target;
 @Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Reference {
+public @interface BundleReference {
 
     /**
      * The id of the attribute of the reference. If not provided the default value is defined based on the value of
@@ -86,6 +70,11 @@ public @interface Reference {
     boolean multiple() default false;
 
     /**
+     * Namespace of the bundle capability.
+     */
+    String namespace();
+
+    /**
      * Whether at least one reference should be configured or not.
      */
     boolean optional() default false;
@@ -95,13 +84,6 @@ public @interface Reference {
      * be the name of the field.
      */
     String referenceId() default "";
-
-    /**
-     * The name of the service interface. This name is used by the Service Component Runtime to access the service on
-     * behalf of the component. If the annotation is declared on class level, this parameter is required. If the
-     * annotation is declared for a field, the default value for the interface parameter is the type of the field.
-     */
-    Class<?> referenceInterface() default AutoDetect.class;
 
     /**
      * The bind method that should be used to bind the reference. In case the unbind method is not specified but there
