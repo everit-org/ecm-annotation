@@ -61,7 +61,7 @@ public @interface CharacterAttribute {
     /**
      * Boolean flag defining whether the attribute should be listed in the MetatypeProvider or not.
      */
-    boolean metatype() default false;
+    boolean metatype() default true;
 
     /**
      * In case it is allowed to define multiple values for the attribute, the values should be provided in an array.
