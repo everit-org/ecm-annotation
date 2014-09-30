@@ -33,6 +33,12 @@ public @interface PasswordAttribute {
     String attributeId() default "";
 
     /**
+     * The default value(s) of the attribute. In case the annotation is appended to a field or method, the default
+     * values come from the default value of the field.
+     */
+    String[] defaultValue() default {};
+
+    /**
      * A descriptive text to provide the client in a form to configure this property. This name may be localized by
      * prepending a % sign to the name. Default value: %&lt;name&gt;.description
      */
