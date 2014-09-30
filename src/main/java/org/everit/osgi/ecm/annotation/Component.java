@@ -33,11 +33,6 @@ public @interface Component {
     String componentId() default "";
 
     /**
-     * Set the metatype factory pid property.
-     */
-    boolean configurationFactory() default false;
-
-    /**
      * The configuration pid. The default value for this is the name of the component.
      */
     String configurationPid() default "";

@@ -28,7 +28,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface References {
+public @interface ServiceReferences {
 
     /**
      * List of {@link ServiceReference} annotations.

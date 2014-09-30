@@ -16,26 +16,23 @@
  */
 package org.everit.osgi.ecm.annotation;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
- * Options for {@link Component#configurationPolicy()} property.
+ * Allows to define multiple {@link BundleCapabilityReference} annotations for one type.
  */
-public enum ConfigurationPolicy {
-
-    FACTORY,
-
-    /**
-     * The configuration admin is not consulted for a configuration for this component.
-     */
-    IGNORE,
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface BundleCapabilityReferences {
 
     /**
-     * If a configuration is available it will be used, if not the component will be activated anyway (this is the
-     * default).
+     * List of {@link ServiceReference} annotations.
      */
-    OPTIONAL,
+    BundleCapabilityReference[] value();
 
-    /**
-     * In order to activate this component a configuration is required.
-     */
-    REQUIRE;
 }
