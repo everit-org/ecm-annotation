@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * The <code>Service</code> annotation defines whether and which service interfaces are provided by the component.
  */
 @Target(ElementType.TYPE)
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Service {
 
