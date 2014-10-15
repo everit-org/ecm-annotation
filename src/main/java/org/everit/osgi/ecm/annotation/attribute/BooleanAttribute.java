@@ -22,6 +22,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.everit.osgi.ecm.annotation.ThreeStateBoolean;
+
 @Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -64,9 +66,9 @@ public @interface BooleanAttribute {
     boolean metatype() default true;
 
     /**
-     * In case it is allowed to define multiple values for the attribute, the values should be provided in an array.
+     * Multiplicity. See the documentation of {@link ThreeStateBoolean}.
      */
-    boolean multiple() default false;
+    ThreeStateBoolean multiple() default ThreeStateBoolean.DEFAULT;
 
     /**
      * Whether the attribute is optional or not.

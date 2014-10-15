@@ -81,9 +81,9 @@ public @interface BundleCapabilityReference {
     boolean metatype() default true;
 
     /**
-     * Whether allowing the configuration of multiple references or not.
+     * Multiplicity. See the documentation of {@link ThreeStateBoolean}.
      */
-    boolean multiple() default false;
+    ThreeStateBoolean multiple() default ThreeStateBoolean.DEFAULT;
 
     /**
      * Namespace of the bundle capability.
