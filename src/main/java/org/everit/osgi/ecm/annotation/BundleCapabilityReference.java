@@ -22,6 +22,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.osgi.framework.Bundle;
+
 @Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -100,4 +102,6 @@ public @interface BundleCapabilityReference {
      * be the name of the field.
      */
     String referenceId() default "";
+
+    int sateMask() default Bundle.ACTIVE;
 }
