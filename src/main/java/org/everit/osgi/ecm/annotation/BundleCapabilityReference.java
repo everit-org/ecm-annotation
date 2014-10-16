@@ -103,5 +103,5 @@ public @interface BundleCapabilityReference {
      */
     String referenceId() default "";
 
-    int sateMask() default Bundle.ACTIVE;
+    int stateMask() default Bundle.ACTIVE;
 }
