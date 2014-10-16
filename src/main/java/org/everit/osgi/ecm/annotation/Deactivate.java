@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * The <code>Dectivate</code> annotation defines the method which is used to deactivate the component.
  */
 @Target({ ElementType.METHOD })
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Deactivate {
 
