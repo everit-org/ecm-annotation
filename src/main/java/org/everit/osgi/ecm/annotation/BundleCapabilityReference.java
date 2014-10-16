@@ -100,11 +100,4 @@ public @interface BundleCapabilityReference {
      * be the name of the field.
      */
     String referenceId() default "";
-
-    /**
-     * The bind method that should be used to bind the reference. In case the unbind method is not specified but there
-     * is a method starting with "un" and ending with the name of the bind method, that method will be used to unbind
-     * the reference.
-     */
-    String unbind() default "";
 }
