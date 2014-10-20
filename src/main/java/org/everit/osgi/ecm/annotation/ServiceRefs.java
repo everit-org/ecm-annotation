@@ -23,16 +23,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Allows to define multiple {@link ServiceReference} annotations for one type.
+ * Allows to define multiple {@link ServiceRef} annotations for one type.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface ServiceReferences {
+public @interface ServiceRefs {
 
     /**
-     * List of {@link ServiceReference} annotations.
+     * List of {@link ServiceRef} annotations.
      */
-    ServiceReference[] value();
+    ServiceRef[] value();
 
 }

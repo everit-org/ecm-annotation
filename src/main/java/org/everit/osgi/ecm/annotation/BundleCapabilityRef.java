@@ -27,7 +27,7 @@ import org.osgi.framework.Bundle;
 @Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface BundleCapabilityReference {
+public @interface BundleCapabilityRef {
 
     /**
      * The id of the attribute of the reference. If not provided the default value is defined based on the value of

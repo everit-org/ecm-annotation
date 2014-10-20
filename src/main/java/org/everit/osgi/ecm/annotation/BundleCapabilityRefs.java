@@ -23,16 +23,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Allows to define multiple {@link BundleCapabilityReference} annotations for one type.
+ * Allows to define multiple {@link BundleCapabilityRef} annotations for one type.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface BundleCapabilityReferences {
+public @interface BundleCapabilityRefs {
 
     /**
-     * List of {@link ServiceReference} annotations.
+     * List of {@link ServiceRef} annotations.
      */
-    BundleCapabilityReference[] value();
+    BundleCapabilityRef[] value();
 
 }

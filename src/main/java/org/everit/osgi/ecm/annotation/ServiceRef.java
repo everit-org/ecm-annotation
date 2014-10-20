@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
 @Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface ServiceReference {
+public @interface ServiceRef {
 
     /**
      * The id of the attribute of the reference. If not provided the default value is defined based on the value of
