@@ -41,13 +41,13 @@ public @interface BundleCapabilityRef {
     String attributeId() default "";
 
     /**
-     * The bind method that should be used to bind the reference. If the annotation is defined on a method, that method
+     * The setter method that should be used to set the reference. If the annotation is defined on a method, that method
      * and it is not specified otherwise in the annotation, the method will be used as a bind method. If the annotation
      * is attached to a field and the bind method is not defined in the annotation and there is method that has the same
      * name as the field but prefixed with "bind" that method will be used as a bind method. In case there is no bind
      * method but there is a setter for the field, it will be used to set the property.
      */
-    String bind() default "";
+    String setter() default "";
 
     ReferenceConfigurationType configurationType() default ReferenceConfigurationType.FILTER;
 
