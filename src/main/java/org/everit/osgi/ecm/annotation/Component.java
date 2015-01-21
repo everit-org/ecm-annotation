@@ -63,7 +63,7 @@ public @interface Component {
     /**
      * The base name of the place of the localized texts.
      */
-    String localizationBase() default "";
+    String localizationBase() default "OSGI-INF/metatype/metatype";
 
     /**
      * If true, MetatypeProvider OSGi service will be registered for the component.
