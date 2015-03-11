@@ -30,14 +30,14 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ByteAttributeOption {
 
-    /**
-     * Label of the option
-     */
-    String label();
+  /**
+   * Label of the option
+   */
+  String label();
 
-    /**
-     * Value of the option
-     */
-    byte value();
+  /**
+   * Value of the option
+   */
+  byte value();
 
 }

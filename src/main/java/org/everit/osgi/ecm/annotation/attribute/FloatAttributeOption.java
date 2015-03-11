@@ -30,14 +30,14 @@ import java.lang.annotation.Target;
 @Documented
 public @interface FloatAttributeOption {
 
-    /**
-     * Label of the option
-     */
-    String label();
+  /**
+   * Label of the option
+   */
+  String label();
 
-    /**
-     * Value of the option
-     */
-    float value();
+  /**
+   * Value of the option
+   */
+  float value();
 
 }

@@ -21,8 +21,8 @@ package org.everit.osgi.ecm.annotation;
  */
 public final class AutoDetect {
 
-    private AutoDetect() {
-        // disallows instancing this class
-    }
+  private AutoDetect() {
+    // disallows instancing this class
+  }
 
 }

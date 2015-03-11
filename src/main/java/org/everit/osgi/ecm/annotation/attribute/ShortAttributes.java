@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ShortAttributes {
 
-    /**
-     * List of {@link ShortAttribute} annotations.
-     */
-    ShortAttribute[] value();
+  /**
+   * List of {@link ShortAttribute} annotations.
+   */
+  ShortAttribute[] value();
 
 }

@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface DoubleAttributes {
 
-    /**
-     * List of {@link DoubleAttribute} annotations.
-     */
-    DoubleAttribute[] value();
+  /**
+   * List of {@link DoubleAttribute} annotations.
+   */
+  DoubleAttribute[] value();
 
 }

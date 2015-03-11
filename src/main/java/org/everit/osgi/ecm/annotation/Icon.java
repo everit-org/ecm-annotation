@@ -22,14 +22,14 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Icon {
 
-    /**
-     * Resource path of the icon that is assigned to the component. The classloader of the component is used to find the
-     * resource.
-     */
-    String path();
+  /**
+   * Resource path of the icon that is assigned to the component. The classloader of the component
+   * is used to find the resource.
+   */
+  String path();
 
-    /**
-     * Size of an icon, e.g. a 16x16 pixels icon then size = 16
-     */
-    int size();
+  /**
+   * Size of an icon, e.g. a 16x16 pixels icon then size = 16
+   */
+  int size();
 }

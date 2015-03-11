@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface CharacterAttributes {
 
-    /**
-     * List of {@link CharacterAttribute} annotations.
-     */
-    CharacterAttribute[] value();
+  /**
+   * List of {@link CharacterAttribute} annotations.
+   */
+  CharacterAttribute[] value();
 
 }

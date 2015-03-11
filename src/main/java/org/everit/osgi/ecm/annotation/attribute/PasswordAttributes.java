@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface PasswordAttributes {
 
-    /**
-     * List of {@link PasswordAttribute} annotations.
-     */
-    PasswordAttribute[] value();
+  /**
+   * List of {@link PasswordAttribute} annotations.
+   */
+  PasswordAttribute[] value();
 
 }

@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface LongAttributes {
 
-    /**
-     * List of {@link LongAttribute} annotations.
-     */
-    LongAttribute[] value();
+  /**
+   * List of {@link LongAttribute} annotations.
+   */
+  LongAttribute[] value();
 
 }

@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface BooleanAttributes {
 
-    /**
-     * List of {@link BooleanAttribute} annotations.
-     */
-    BooleanAttribute[] value();
+  /**
+   * List of {@link BooleanAttribute} annotations.
+   */
+  BooleanAttribute[] value();
 
 }

@@ -30,14 +30,14 @@ import java.lang.annotation.Target;
 @Documented
 public @interface DoubleAttributeOption {
 
-    /**
-     * Label of the option
-     */
-    String label();
+  /**
+   * Label of the option
+   */
+  String label();
 
-    /**
-     * Value of the option
-     */
-    double value();
+  /**
+   * Value of the option
+   */
+  double value();
 
 }

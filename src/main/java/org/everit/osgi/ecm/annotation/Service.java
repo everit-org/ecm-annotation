@@ -23,17 +23,18 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The <code>Service</code> annotation defines whether and which service interfaces are provided by the component.
+ * The <code>Service</code> annotation defines whether and which service interfaces are provided by
+ * the component.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Service {
 
-    /**
-     * The class of the service interface provided by the component. If this property is not set provide elements will
-     * be generated for all interfaces implemented by the component class.
-     */
-    Class<?>[] value() default {};
+  /**
+   * The class of the service interface provided by the component. If this property is not set
+   * provide elements will be generated for all interfaces implemented by the component class.
+   */
+  Class<?>[] value() default {};
 
 }

@@ -30,14 +30,14 @@ import java.lang.annotation.Target;
 @Documented
 public @interface IntegerAttributeOption {
 
-    /**
-     * Label of the option
-     */
-    String label();
+  /**
+   * Label of the option
+   */
+  String label();
 
-    /**
-     * Value of the option
-     */
-    int value();
+  /**
+   * Value of the option
+   */
+  int value();
 
 }

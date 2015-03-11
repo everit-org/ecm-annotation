@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ByteAttributes {
 
-    /**
-     * List of {@link ByteAttribute} annotations.
-     */
-    ByteAttribute[] value();
+  /**
+   * List of {@link ByteAttribute} annotations.
+   */
+  ByteAttribute[] value();
 
 }

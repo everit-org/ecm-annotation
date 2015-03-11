@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface FloatAttributes {
 
-    /**
-     * List of {@link FloatAttribute} annotations.
-     */
-    FloatAttribute[] value();
+  /**
+   * List of {@link FloatAttribute} annotations.
+   */
+  FloatAttribute[] value();
 
 }

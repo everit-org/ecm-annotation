@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ServiceRefs {
 
-    /**
-     * List of {@link ServiceRef} annotations.
-     */
-    ServiceRef[] value();
+  /**
+   * List of {@link ServiceRef} annotations.
+   */
+  ServiceRef[] value();
 
 }

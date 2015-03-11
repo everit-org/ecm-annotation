@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface StringAttributes {
 
-    /**
-     * List of {@link StringAttribute} annotations.
-     */
-    StringAttribute[] value();
+  /**
+   * List of {@link StringAttribute} annotations.
+   */
+  StringAttribute[] value();
 
 }

@@ -27,46 +27,46 @@ import java.lang.annotation.Target;
 @Documented
 public @interface Component {
 
-    /**
-     * Defines the Component id. Default value: Fully qualified name of the Java class.
-     */
-    String componentId() default "";
+  /**
+   * Defines the Component id. Default value: Fully qualified name of the Java class.
+   */
+  String componentId() default "";
 
-    /**
-     * The configuration pid. The default value for this is the name of the component.
-     */
-    String configurationPid() default "";
+  /**
+   * The configuration pid. The default value for this is the name of the component.
+   */
+  String configurationPid() default "";
 
-    /**
-     * If true configuration is required to activate the component otherwise if there is no configuration, the component
-     * will be activated anyway.
-     */
-    ConfigurationPolicy configurationPolicy() default ConfigurationPolicy.OPTIONAL;
+  /**
+   * If true configuration is required to activate the component otherwise if there is no
+   * configuration, the component will be activated anyway.
+   */
+  ConfigurationPolicy configurationPolicy() default ConfigurationPolicy.OPTIONAL;
 
-    /**
-     * This is generally used as a description for the object described by the meta type. This name may be localized by
-     * prepending a % sign to the name. Default value: %&lt;name&gt;.description
-     */
-    String description() default "";
+  /**
+   * This is generally used as a description for the object described by the meta type. This name
+   * may be localized by prepending a % sign to the name. Default value: %&lt;name&gt;.description
+   */
+  String description() default "";
 
-    /**
-     * One or more icon that should be shown for the component on a management screen.
-     */
-    Icon[] icons() default {};
+  /**
+   * One or more icon that should be shown for the component on a management screen.
+   */
+  Icon[] icons() default {};
 
-    /**
-     * This is generally used as a title for the object described by the meta type. This name may be localized by
-     * prepending a % sign to the name. Default value: %&lt;name&gt;.name
-     */
-    String label() default "";
+  /**
+   * This is generally used as a title for the object described by the meta type. This name may be
+   * localized by prepending a % sign to the name. Default value: %&lt;name&gt;.name
+   */
+  String label() default "";
 
-    /**
-     * The base name of the place of the localized texts.
-     */
-    String localizationBase() default "OSGI-INF/metatype/metatype";
+  /**
+   * The base name of the place of the localized texts.
+   */
+  String localizationBase() default "OSGI-INF/metatype/metatype";
 
-    /**
-     * If true, MetatypeProvider OSGi service will be registered for the component.
-     */
-    boolean metatype() default true;
+  /**
+   * If true, MetatypeProvider OSGi service will be registered for the component.
+   */
+  boolean metatype() default true;
 }

@@ -30,14 +30,14 @@ import java.lang.annotation.Target;
 @Documented
 public @interface LongAttributeOption {
 
-    /**
-     * Label of the option
-     */
-    String label();
+  /**
+   * Label of the option
+   */
+  String label();
 
-    /**
-     * Value of the option
-     */
-    long value();
+  /**
+   * Value of the option
+   */
+  long value();
 
 }

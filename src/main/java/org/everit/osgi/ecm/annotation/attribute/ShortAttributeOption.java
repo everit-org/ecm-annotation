@@ -30,14 +30,14 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ShortAttributeOption {
 
-    /**
-     * Label of the option
-     */
-    String label();
+  /**
+   * Label of the option
+   */
+  String label();
 
-    /**
-     * Value of the option
-     */
-    short value();
+  /**
+   * Value of the option
+   */
+  short value();
 
 }

@@ -23,7 +23,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The <code>Dectivate</code> annotation defines the method which is used to deactivate the component.
+ * The <code>Dectivate</code> annotation defines the method which is used to deactivate the
+ * component.
  */
 @Target({ ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)

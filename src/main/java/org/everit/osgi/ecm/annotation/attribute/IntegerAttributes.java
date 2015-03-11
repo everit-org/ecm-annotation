@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface IntegerAttributes {
 
-    /**
-     * List of {@link IntegerAttribute} annotations.
-     */
-    IntegerAttribute[] value();
+  /**
+   * List of {@link IntegerAttribute} annotations.
+   */
+  IntegerAttribute[] value();
 
 }

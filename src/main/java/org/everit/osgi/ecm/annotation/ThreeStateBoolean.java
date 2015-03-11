@@ -18,5 +18,5 @@ package org.everit.osgi.ecm.annotation;
 
 public enum ThreeStateBoolean {
 
-    DEFAULT, FALSE, TRUE
+  DEFAULT, FALSE, TRUE
 }

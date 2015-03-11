@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface BundleCapabilityRefs {
 
-    /**
-     * List of {@link ServiceRef} annotations.
-     */
-    BundleCapabilityRef[] value();
+  /**
+   * List of {@link ServiceRef} annotations.
+   */
+  BundleCapabilityRef[] value();
 
 }
