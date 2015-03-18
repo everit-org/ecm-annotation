@@ -1,6 +1,8 @@
 ecm-annotation
 ==============
 
-Annotation definitions for the Everit Component Model
+By using annotations it is easier to create ECM (Everit Component Model)
+components. An annotated class can be translated to Component Metadata with
+the help of [ECM MetadataBuilder][1] project.
 
-[![Analytics](https://ga-beacon.appspot.com/UA-15041869-4/everit-org/ecm-annotation)](https://github.com/igrigorik/ga-beacon)
+[1]: https://github.com/everit-org/ecm-annotation-metadatabuilder
