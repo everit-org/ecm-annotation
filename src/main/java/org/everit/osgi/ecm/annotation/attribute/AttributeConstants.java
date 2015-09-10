@@ -15,23 +15,16 @@
  */
 package org.everit.osgi.ecm.annotation.attribute;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 /**
- * Set of display priorities for the attributes of the component. See
- * {@link AttributePriority}.
+ * Constants of the Attributes.
  */
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-public @interface AttributePriorities {
+public final class AttributeConstants {
 
   /**
-   * List of {@link AttributePriority} annotations.
+   * Default priority for attributes where it is not defined otherwise.
    */
-  AttributePriority[]value();
+  public static final float DEFAULT_PRIORITY = 1000;
+
+  private AttributeConstants() {
+  }
 }

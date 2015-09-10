@@ -21,7 +21,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.everit.osgi.ecm.annotation.attribute.AttributePriority;
+import org.everit.osgi.ecm.annotation.attribute.AttributeConstants;
 
 /**
  * Reference of an OSGi service.
@@ -52,7 +52,7 @@ public @interface ServiceRef {
    * The priority of the attribute. Smaller number means higher priority. The attributes with higher
    * priority will be rendered first on the configuration screen.
    */
-  float attributePriority() default AttributePriority.DEFAULT_ATTRIBUTE_PRIORITY;
+  float attributePriority() default AttributeConstants.DEFAULT_PRIORITY;
 
   /**
    * Type of the configuration of the reference items. For more information, see

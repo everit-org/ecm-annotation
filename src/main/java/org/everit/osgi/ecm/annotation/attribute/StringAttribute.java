@@ -92,7 +92,7 @@ public @interface StringAttribute {
    * The priority of the attribute. Smaller number means higher priority. The attributes with higher
    * priority will be rendered first on the configuration screen.
    */
-  float priority() default AttributePriority.DEFAULT_ATTRIBUTE_PRIORITY;
+  float priority() default AttributeConstants.DEFAULT_PRIORITY;
 
   /**
    * The setter method that should be used to inject the value of this property. If the annotation
