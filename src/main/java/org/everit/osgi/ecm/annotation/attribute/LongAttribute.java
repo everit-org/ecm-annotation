@@ -43,7 +43,7 @@ public @interface LongAttribute {
    * The default value(s) of the attribute. In case the annotation is appended to a field or method,
    * the default values come from the default value of the field.
    */
-  long[]defaultValue() default {};
+  long[] defaultValue() default {};
 
   /**
    * A descriptive text to provide the client in a form to configure this property. This name may be
@@ -87,7 +87,7 @@ public @interface LongAttribute {
    * used as the value while the parameter value is used as the label in the user interface. This
    * label may be prepended with a % sign to localize the string.
    */
-  LongAttributeOption[]options() default {};
+  LongAttributeOption[] options() default {};
 
   /**
    * The priority of the attribute. Smaller number means higher priority. The attributes with higher

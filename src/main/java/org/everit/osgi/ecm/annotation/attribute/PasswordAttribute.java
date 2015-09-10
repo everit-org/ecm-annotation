@@ -40,7 +40,7 @@ public @interface PasswordAttribute {
    * The default value(s) of the attribute. In case the annotation is appended to a field or method,
    * the default values come from the default value of the field.
    */
-  String[]defaultValue() default {};
+  String[] defaultValue() default {};
 
   /**
    * A descriptive text to provide the client in a form to configure this property. This name may be

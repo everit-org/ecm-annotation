@@ -67,7 +67,7 @@ public @interface BundleCapabilityRef {
    * optional, the component does not need configuration and the default value is not defined, a one
    * element array will be used with an empty String.
    */
-  String[]defaultValue() default {};
+  String[] defaultValue() default {};
 
   /**
    * A descriptive text to provide the client in a form to configure this property. This name may be
