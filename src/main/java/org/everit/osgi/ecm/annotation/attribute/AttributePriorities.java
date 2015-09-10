@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.ecm.annotation;
+package org.everit.osgi.ecm.annotation.attribute;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,16 +22,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The order of attributes how they should be shown on a form. If not defined, the attributes are
- * shown in the order how they are defined on the class and its fields / methods.
+ * Set of display priorities for the attributes of the component. See
+ * {@link AttributePriority}.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface AttributeOrder {
+public @interface AttributePriorities {
 
   /**
-   * The name of the attributes.
+   * List of {@link AttributePriority} annotations.
    */
-  String[] value() default {};
+  AttributePriority[]value();
 }

@@ -43,7 +43,7 @@ public @interface BooleanAttribute {
    * The default value(s) of the attribute. In case the annotation is appended to a field or method,
    * the default values come from the default value of the field.
    */
-  boolean[] defaultValue() default {};
+  boolean[]defaultValue() default {};
 
   /**
    * A descriptive text to provide the client in a form to configure this property. This name may be
@@ -78,6 +78,12 @@ public @interface BooleanAttribute {
    * Whether the attribute is optional or not.
    */
   boolean optional() default false;
+
+  /**
+   * The priority of the attribute. Smaller number means higher priority. The attributes with higher
+   * priority will be rendered first on the configuration screen.
+   */
+  float priority() default AttributePriority.DEFAULT_ATTRIBUTE_PRIORITY;
 
   /**
    * The setter method that should be used to inject the value of this property. If the annotation

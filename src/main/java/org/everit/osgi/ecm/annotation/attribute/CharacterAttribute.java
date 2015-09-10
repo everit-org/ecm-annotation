@@ -44,7 +44,7 @@ public @interface CharacterAttribute {
    * The default value(s) of the attribute. In case the annotation is appended to a field or method,
    * the default values come from the default value of the field.
    */
-  char[] defaultValue() default {};
+  char[]defaultValue() default {};
 
   /**
    * A descriptive text to provide the client in a form to configure this property. This name may be
@@ -88,7 +88,13 @@ public @interface CharacterAttribute {
    * is used as the value while the parameter value is used as the label in the user interface. This
    * label may be prepended with a % sign to localize the string.
    */
-  CharacterAttributeOption[] options() default {};
+  CharacterAttributeOption[]options() default {};
+
+  /**
+   * The priority of the attribute. Smaller number means higher priority. The attributes with higher
+   * priority will be rendered first on the configuration screen.
+   */
+  float priority() default AttributePriority.DEFAULT_ATTRIBUTE_PRIORITY;
 
   /**
    * The setter method that should be used to inject the value of this property. If the annotation
