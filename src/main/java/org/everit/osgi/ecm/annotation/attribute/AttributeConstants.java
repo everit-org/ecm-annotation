@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.everit.osgi.ecm.annotation;
-
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+package org.everit.osgi.ecm.annotation.attribute;
 
 /**
- * The order of attributes how they should be shown on a form. If not defined, the attributes are
- * shown in the order how they are defined on the class and its fields / methods.
+ * Constants of the Attributes.
  */
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-public @interface AttributeOrder {
+public final class AttributeConstants {
 
   /**
-   * The name of the attributes.
+   * Default priority for attributes where it is not defined otherwise.
    */
-  String[] value() default {};
+  public static final float DEFAULT_PRIORITY = 1000;
+
+  private AttributeConstants() {
+  }
 }

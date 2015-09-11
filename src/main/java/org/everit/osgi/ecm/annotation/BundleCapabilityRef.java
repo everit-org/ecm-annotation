@@ -21,6 +21,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.everit.osgi.ecm.annotation.attribute.AttributeConstants;
 import org.osgi.framework.Bundle;
 
 /**
@@ -48,6 +49,12 @@ public @interface BundleCapabilityRef {
    * </ul>
    */
   String attributeId() default "";
+
+  /**
+   * The priority of the attribute. Smaller number means higher priority. The attributes with higher
+   * priority will be rendered first on the configuration screen.
+   */
+  float attributePriority() default AttributeConstants.DEFAULT_PRIORITY;
 
   /**
    * Type of configuration that is either a clause or a filter.

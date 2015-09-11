@@ -89,6 +89,12 @@ public @interface StringAttribute {
   StringAttributeOption[] options() default {};
 
   /**
+   * The priority of the attribute. Smaller number means higher priority. The attributes with higher
+   * priority will be rendered first on the configuration screen.
+   */
+  float priority() default AttributeConstants.DEFAULT_PRIORITY;
+
+  /**
    * The setter method that should be used to inject the value of this property. If the annotation
    * is defined on a method, that method and it is not specified otherwise in the annotation, the
    * method will be used as a setter. If the annotation is attached to a field and the setter is not
