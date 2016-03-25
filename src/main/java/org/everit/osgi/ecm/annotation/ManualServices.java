@@ -15,18 +15,23 @@
  */
 package org.everit.osgi.ecm.annotation;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * A service that is registered with one of the registerService functions of the ComponentContext
- * programmatically.
+ * Services that are offered programmatically, using one of the registerService functions of
+ * ComponentContext.
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ManualService {
+@Target(ElementType.TYPE)
+@Documented
+public @interface ManualServices {
 
   /**
-   * List of types that the service is registered with.
+   * An array of services that are offered programmatically.
    */
-  Class<?>[] value();
+  ManualService[] value();
 }
