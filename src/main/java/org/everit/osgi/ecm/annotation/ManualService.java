@@ -17,11 +17,13 @@ package org.everit.osgi.ecm.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * A service that is registered with one of the registerService functions of the ComponentContext
  * programmatically.
  */
+@Target({})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ManualService {
 

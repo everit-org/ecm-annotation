@@ -17,11 +17,13 @@ package org.everit.osgi.ecm.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * An optional icon that can be set for the {@link Component} to have a nicer look on the
  * configuration screen.
  */
+@Target({})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Icon {
 
