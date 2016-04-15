@@ -71,4 +71,10 @@ public @interface Component {
    * If true, MetatypeProvider OSGi service will be registered for the component.
    */
   boolean metatype() default true;
+
+  /**
+   * Version of the component. If not specified, the version of the component will be the bundle
+   * that holds the component.
+   */
+  String version() default "";
 }
